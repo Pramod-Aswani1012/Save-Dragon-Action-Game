@@ -11,9 +11,15 @@
 </head>
 
 <body>
-
+    <div class="beforecontent">
+        <p>Press <b>&#8592;</b> to move left</p>
+        <p>Press <b>&#8594;</b> to move right</p>
+        <p>Press <b>&#8593;</b> to Jump</p>
+        <p>Press <b>&#8593;</b> and <b>&#8594;</b> to save from Dragon</p>
+    </div>
     <div class="gamecontainer">
         <button id="btn" onclick="Startgame()">Start Game</button>
+        <button id="btn2" onClick="window.location.reload()">Play Again</button>
         <audio src="./game over sound.wav" id="gamekhatam" type="audio/mpeg"></audio>
         <div class="score">Your Score : 0</div>
         <div class="gameover">Welcome to Dragon Game</div>
