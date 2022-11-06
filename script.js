@@ -66,7 +66,7 @@ let score = 0;
                 let gover = document.getElementById('gamekhatam');
                 gover.play();
                 player.classList.add('losted');
-                gameover.innerHTML = "Reload to play again";
+                gameover.innerHTML = "Game Over => Reload to play again";
                 clearInterval(b);
             }
             else {
