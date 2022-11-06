@@ -26,7 +26,7 @@ let score = 0;
                 console.log(playleft);
                 // parseInt(playleft);
                 // play=playleft+5+"px";
-                play.style.left = playleft + 150 + "px";;
+                play.style.left = playleft + 160 + "px";;
                 console.log(playleft);
             }
             else if (a.keyCode == 37)              //37 for left
