@@ -32,14 +32,18 @@ let b = setInterval(() => {
     let player = document.querySelector('.player');
     let gameover = document.querySelector('.gameover');
     let dragon = document.querySelector('.dragon');
+    let dragon2 = document.querySelector('.dragon2');
     let anidrag = document.querySelector('.movedragon');
+    let anidrag2 = document.querySelector('.movedragon2');
 
     let ans = isCollide(player, dragon);
+    let ans2 = isCollide(player, dragon2);
     console.log(ans);
-    if (ans == true) {
+    if (ans || ans2) {
         console.log("Ho gaya")
         gameover.style.display = 'block';
         anidrag.style.animationPlayState = 'paused';
+        anidrag2.style.animationPlayState = 'paused';
         let gover = document.getElementById('gamekhatam');
         gover.play();
         player.classList.add('losted');
@@ -75,18 +79,22 @@ let b = setInterval(() => {
                 let newanimdur = anidur-0.1;
                 dragon.style.anmationDuration=newanimdur+'s';
                 console.log(dragon.style.anmationDuration);
+                anidrag2.style.animationPlayState = 'running';
+
             }
             if(score>10)
             {
-                let newanimdur = anidur-0.4;
+                let newanimdur = anidur-0.5;
                 dragon.style.anmationDuration=newanimdur+'s';
                 console.log(dragon.style.anmationDuration);
+                
             }
             if(score>15)
             {
                 let newanimdur = anidur-1.0;
                 dragon.style.anmationDuration=newanimdur+'s';
                 console.log(dragon.style.anmationDuration);
+                
             }
 
         }
