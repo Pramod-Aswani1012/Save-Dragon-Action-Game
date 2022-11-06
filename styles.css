@@ -37,12 +37,12 @@
             background-repeat: no-repeat;
             /* border: 2px solid blue; */
             background-size: cover;
-            height: 30vh;
-            width: 10vw;
+            height: 22vh;
+            width: 9vw;
             right: 13vw;
             z-index: 2;
             /* top: 10vh; */
-            bottom: 0vh;
+            bottom: 0.4vh;
         }
 
         .movedragon {
@@ -61,7 +61,7 @@
         }
 
         .animatejump {
-            animation: jump 1s;
+            animation: jump 1.2s;
         }
 
         @keyframes jump {
@@ -71,7 +71,7 @@
 
             50% {
 
-                bottom: 48vh;
+                bottom: 50vh;
             }
 
             100% {
