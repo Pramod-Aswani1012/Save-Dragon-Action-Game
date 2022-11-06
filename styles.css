@@ -7,6 +7,8 @@
     --grey: grey;
 }
 
+
+
 body::before {
     content: "";
     background-color: var(--grey);
@@ -67,13 +69,33 @@ b {
     background-size: cover;
     height: 22vh;
     width: 9vw;
-    right: 3vw;
+    right: -10vw;
+    z-index: 2;
+    /* top: 10vh; */
+    bottom: 0.4vh;
+}
+
+.dragon2 {
+    position: absolute;
+    background-image: url('./Dinasour.png');
+    background-repeat: no-repeat;
+    /* border: 2px solid blue; */
+    background-size: cover;
+    height: 22vh;
+    width: 9vw;
+    right: -10vw;
     z-index: 2;
     /* top: 10vh; */
     bottom: 0.4vh;
 }
 
 .movedragon {
+    animation: movedrag 3s linear infinite;
+    animation-play-state: paused;
+    animation-delay: 2s;
+}
+
+.movedragon2 {
     animation: movedrag 3s linear infinite;
     animation-play-state: paused;
     animation-delay: 2s;
