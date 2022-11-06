@@ -101,7 +101,7 @@ document.onkeydown = function (a) {
         play.classList.add('animatejump');
         setTimeout(() => {
             play.classList.remove('animatejump');
-        }, 700);
+        }, 800);
     }
     else if (a.keyCode == 39)              //39 for right
     {
