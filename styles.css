@@ -1,141 +1,187 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
 
-        * {
-            margin: 0px;
-            padding: 0px;
-        }
+:root {
+    --grey: grey;
+}
 
-        body {
-            overflow: hidden;
-        }
+body::before {
+    content: "";
+    background-color: var(--grey);
+    top: 0px;
+    left: 0px;
+    height: 100vh;
+    width: 100%;
+    z-index: 0;
+    opacity: 0.8;
 
-        .gamecontainer {
-            background: url('./background.jpg');
-            background-repeat: no-repeat;
-            background-size: 100vw 100vh;
-            height: 100vh;
-            width: 100%;
-            z-index: -1;
-        }
+    position: absolute;
+}
 
-        .player {
-            position: absolute;
-            background-image: url('./player.png');
-            background-repeat: no-repeat;
-            /* border: 2px solid red; */
-            background-size: cover;
-            height: 15vh;
-            width: 15vw;
-            z-index: 2;
-            /* left: 1vw; */
-            /* top: 10vh; */
-            bottom: 2vh;
-        }
+body {
+    overflow: hidden;
+}
 
-        .dragon {
-            position: absolute;
-            background-image: url('./Dinasour.png');
-            background-repeat: no-repeat;
-            /* border: 2px solid blue; */
-            background-size: cover;
-            height: 22vh;
-            width: 9vw;
-            right: 13vw;
-            z-index: 2;
-            /* top: 10vh; */
-            bottom: 0.4vh;
-        }
+.beforecontent {
+    position: absolute;
+    font-size: 2rem;
+    top: 64vh;
+    left: 42vw;
+    font-weight: 200;
+}
 
-        .movedragon {
-            animation: movedrag 3s linear infinite;
-            animation-play-state: paused;
-        }
+b {
+    font-weight: 1000px;
+}
 
-        @keyframes movedrag {
-            0% {
-                left: 100vw;
-            }
+.gamecontainer {
+    background: url('./background.jpg');
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    height: 100vh;
+    width: 100%;
+    z-index: -1;
+}
 
-            100% {
-                left: -10vw;
-            }
-        }
+.player {
+    position: absolute;
+    background-image: url('./player.png');
+    background-repeat: no-repeat;
+    /* border: 2px solid red; */
+    background-size: cover;
+    height: 15vh;
+    width: 15vw;
+    z-index: 2;
+    /* left: 1vw; */
+    /* top: 10vh; */
+    bottom: 2vh;
+}
 
-        .animatejump {
-            animation: jump 1.2s;
-        }
+.dragon {
+    position: absolute;
+    background-image: url('./Dinasour.png');
+    background-repeat: no-repeat;
+    /* border: 2px solid blue; */
+    background-size: cover;
+    height: 22vh;
+    width: 9vw;
+    right: 3vw;
+    z-index: 2;
+    /* top: 10vh; */
+    bottom: 0.4vh;
+}
 
-        @keyframes jump {
-            0% {
-                bottom: 0vh;
-            }
+.movedragon {
+    animation: movedrag 3s linear infinite;
+    animation-play-state: paused;
+    animation-delay: 2s;
+}
 
-            50% {
+@keyframes movedrag {
+    0% {
+        left: 100vw;
+    }
 
-                bottom: 50vh;
-            }
+    100% {
+        left: -10vw;
+    }
+}
 
-            100% {
-                bottom: 0vh;
+.animatejump {
+    animation: jump 1.2s;
+}
 
-            }
-        }
+@keyframes jump {
+    0% {
+        bottom: 0vh;
+    }
 
-        .gameover {
-            position: absolute;
-            left: 38%;
-            top: 8vh;
-            /* display: none; */
-            text-align: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 2rem;
-            color: black;
+    50% {
 
-        }
+        bottom: 50vh;
+    }
 
-        #btn {
-            position: absolute;
-            top: 42vh;
-            left: 42vw;
-            height: 16vh;
-            width: 17vw;
-            background-color: lawngreen;
-            border-radius: 10%;
-            font-size: 1.5rem;
-            transition: all 1s;
-            cursor: pointer;
-        }
+    100% {
+        bottom: 0vh;
 
-        #btn:hover {
-            transform: scale(1.2);
-        }
+    }
+}
 
-        .score {
-            position: absolute;
-            font-size: 2rem;
-            right: 2vw;
-            top: 1vh;
-        }
-        .losted
-        {
-            animation: lost 0.4s linear;
-        }
-        @keyframes lost {
-            0%
-            {
-                /* top: 0px; */
-                bottom: 0px;
-            }
-            50%
-            {
-                /* top: 0px; */
-                bottom: 310px;
-            }
-            100%
-            {
-                /* top: 0px; */
-                bottom: 0px;
-            }
-        }
-    
+.gameover {
+    position: absolute;
+    left: 38%;
+    top: 8vh;
+    /* display: none; */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: black;
+
+}
+
+#btn {
+    position: absolute;
+    top: 42vh;
+    left: 42vw;
+    height: 16vh;
+    width: 17vw;
+    background-color: lawngreen;
+    border-radius: 10%;
+    font-size: 1.5rem;
+    transition: all 1s;
+    cursor: pointer;
+}
+
+#btn:hover {
+    transform: scale(1.2);
+}
+
+.score {
+    position: absolute;
+    font-size: 2rem;
+    right: 2vw;
+    top: 1vh;
+}
+
+.losted {
+    animation: lost 0.4s linear;
+}
+
+@keyframes lost {
+    0% {
+        /* top: 0px; */
+        bottom: 0px;
+    }
+
+    50% {
+        /* top: 0px; */
+        bottom: 310px;
+    }
+
+    100% {
+        /* top: 0px; */
+        bottom: 0px;
+    }
+}
+
+#btn2 {
+    display: none;
+    position: absolute;
+    top: 42vh;
+    left: 42vw;
+    height: 16vh;
+    width: 17vw;
+    background-color: yellow;
+    border-radius: 10%;
+    font-size: 1.5rem;
+    transition: all 1s;
+    cursor: pointer;
+}
+
+#btn2:hover {
+    transform: scale(1.2);
+}
