@@ -6,6 +6,7 @@ function Startgame() {
     let Start = document.getElementById('btn')
     let player = document.querySelector('.player');
     let gameover = document.querySelector('.gameover');
+    let gameshuru = document.getElementById('gameshuru');
     let dragon = document.querySelector('.dragon');
     let anidrag = document.querySelector('.movedragon');
 
@@ -19,7 +20,7 @@ function Startgame() {
     root.style.setProperty("--grey", 'transparent');
     let playagain = document.getElementById('btn2');
     playagain.style.display = 'none';
-
+    gameshuru.play();
 
 
 
@@ -35,6 +36,7 @@ let b = setInterval(() => {
     let dragon2 = document.querySelector('.dragon2');
     let anidrag = document.querySelector('.movedragon');
     let anidrag2 = document.querySelector('.movedragon2');
+    let gameshuru = document.getElementById('gameshuru');
 
     let ans = isCollide(player, dragon);
     let ans2 = isCollide(player, dragon2);
@@ -53,7 +55,7 @@ let b = setInterval(() => {
 
         let playagain = document.getElementById('btn2');
         playagain.style.display = 'block';
-
+        gameshuru.pause();
 
         clearInterval(b);
     }
@@ -107,6 +109,8 @@ document.onkeydown = function (a) {
     {
         let play = document.querySelector('.player');
         play.classList.add('animatejump');
+        let jumpkro = document.getElementById('jump_audio');
+        jumpkro.play();
         setTimeout(() => {
             play.classList.remove('animatejump');
         }, 800);
