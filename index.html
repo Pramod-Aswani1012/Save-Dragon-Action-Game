@@ -1,209 +1,37 @@
-* {
-    margin: 0px;
-    padding: 0px;
-}
+<!DOCTYPE html>
+<html lang="en">
 
-:root {
-    --grey: grey;
-}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Escape Dragon Javascript Action Game</title>
+    
+</head>
 
+<body>
+    <div class="beforecontent">
+        <p>Press <b>&#8592;</b> to move left</p>
+        <p>Press <b>&#8594;</b> to move right</p>
+        <p>Press <b>&#8593;</b> to Jump</p>
+        <p>Press <b>&#8593;</b> and <b>&#8594;</b> to save from Dragon</p>
+    </div>
+    <div class="gamecontainer">
+        <!-- <img src="./background.jpg" alt="bg"> -->
+        <button id="btn" onclick="Startgame()">Start Game</button>
+        <button id="btn2" onClick="window.location.reload()">Play Again</button>
+        <audio src="./game over sound.wav" id="gamekhatam" type="audio/mpeg"></audio>
+        <audio src="./Play Sound.mp3" loop type="audio/mpeg" id="gameshuru"></audio>
+        <audio src="./Jump Sound.mp3" id="jump_audio"></audio>
+        <div class="score">Your Score : 0</div>
+        <div class="gameover">Welcome to Dragon Game</div>
+        <!-- <div class="gameover sco"></div> -->
+        <div class="player"></div>
+        <div class="dragon movedragon"></div>
+        <div class="dragon2 movedragon2"></div>
+    </div>
+    <script src="./script.js"></script>
+</body>
 
-
-body::before {
-    content: "";
-    background-color: var(--grey);
-    top: 0px;
-    left: 0px;
-    height: 100vh;
-    width: 100%;
-    z-index: 0;
-    opacity: 0.8;
-
-    position: absolute;
-}
-
-body {
-    overflow: hidden;
-}
-
-.beforecontent {
-    position: absolute;
-    font-size: 2rem;
-    top: 64vh;
-    left: 42vw;
-    font-weight: 200;
-}
-
-b {
-    font-weight: 1000px;
-}
-
-.gamecontainer {
-    background: url('./background.jpg');
-    background-repeat: no-repeat;
-    background-size: 100vw 100vh;
-    height: 100vh;
-    width: 100%;
-    z-index: -1;
-}
-
-.player {
-    position: absolute;
-    background-image: url('./player.png');
-    background-repeat: no-repeat;
-    /* border: 2px solid red; */
-    background-size: cover;
-    height: 15vh;
-    width: 15vw;
-    z-index: 2;
-    /* left: 1vw; */
-    /* top: 10vh; */
-    bottom: 2vh;
-}
-
-.dragon {
-    position: absolute;
-    background-image: url('./Dinasour.png');
-    background-repeat: no-repeat;
-    /* border: 2px solid blue; */
-    background-size: cover;
-    height: 22vh;
-    width: 9vw;
-    right: -10vw;
-    z-index: 2;
-    /* top: 10vh; */
-    bottom: 0.4vh;
-}
-
-.dragon2 {
-    position: absolute;
-    background-image: url('./Dinasour.png');
-    background-repeat: no-repeat;
-    /* border: 2px solid blue; */
-    background-size: cover;
-    height: 22vh;
-    width: 9vw;
-    right: -10vw;
-    z-index: 2;
-    /* top: 10vh; */
-    bottom: 0.4vh;
-}
-
-.movedragon {
-    animation: movedrag 3s linear infinite;
-    animation-play-state: paused;
-    animation-delay: 2s;
-}
-
-.movedragon2 {
-    animation: movedrag 3s linear infinite;
-    animation-play-state: paused;
-    animation-delay: 2s;
-}
-
-@keyframes movedrag {
-    0% {
-        left: 100vw;
-    }
-
-    100% {
-        left: -10vw;
-    }
-}
-
-.animatejump {
-    animation: jump 1.2s;
-}
-
-@keyframes jump {
-    0% {
-        bottom: 0vh;
-    }
-
-    50% {
-
-        bottom: 50vh;
-    }
-
-    100% {
-        bottom: 0vh;
-
-    }
-}
-
-.gameover {
-    position: absolute;
-    left: 38%;
-    top: 8vh;
-    /* display: none; */
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    color: black;
-
-}
-
-#btn {
-    position: absolute;
-    top: 42vh;
-    left: 42vw;
-    height: 16vh;
-    width: 17vw;
-    background-color: lawngreen;
-    border-radius: 10%;
-    font-size: 1.5rem;
-    transition: all 1s;
-    cursor: pointer;
-}
-
-#btn:hover {
-    transform: scale(1.2);
-}
-
-.score {
-    position: absolute;
-    font-size: 2rem;
-    right: 2vw;
-    top: 1vh;
-}
-
-.losted {
-    animation: lost 0.4s linear;
-}
-
-@keyframes lost {
-    0% {
-        /* top: 0px; */
-        bottom: 0px;
-    }
-
-    50% {
-        /* top: 0px; */
-        bottom: 310px;
-    }
-
-    100% {
-        /* top: 0px; */
-        bottom: 0px;
-    }
-}
-
-#btn2 {
-    display: none;
-    position: absolute;
-    top: 42vh;
-    left: 42vw;
-    height: 16vh;
-    width: 17vw;
-    background-color: yellow;
-    border-radius: 10%;
-    font-size: 1.5rem;
-    transition: all 1s;
-    cursor: pointer;
-}
-
-#btn2:hover {
-    transform: scale(1.2);
-}
+</html>
